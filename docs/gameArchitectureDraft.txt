@@ -1,0 +1,62 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+** GENERAL APPROACH TO BE FOLLOWED (FOR PROGRAMMING) **
+1. Mutable on ever-changing details. These include:
+	-> Positions
+	-> Consumed fruits
+	-> Score
+2. Immutable on general game. This includes:
+	-> Current positions
+	-> Layout
+3. Snapshot creation on each frame. New state replaces older state. Each state represents a current configuration for the pac-man game.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+** GAME STATE CONSIDERATIONS **
+
+1. General
+-> Mode (regular, frightened/hyper)
+-> Difficulty (1-3)
+-> Score
+-> Is active
+
+2. Map
+-> Walls configuration
+-> Weights on the tracks
+
+3. Pac-man (player)
+-> Position
+-> Velocity
+-> Mode (regular, mega, dead)
+
+4. Ghost
+-> Position
+-> Velocity
+-> Mode (regular, frightened, incapacitated)
+-> Difficulty (1-3)
+-> Strategy for chasing Pac-man
+
+5. Collectibles
+-> Position
+-> Effect (regular, mega)
+-> Value on score
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+** OVERVIEW OF MAIN GAME LOOP PROCESS	 **
+
+1. User enters input for making pac-man move
+2. Game process the move input and makes the expected changes. In this case, it would be pac-man's position. Game
+doesn't do anything if it detects that pac-man clashes with a wall.
+3. Game moves ghosts based on new pac-man position and current mode (regular or frightened)
+4. Game checks for collision with entities. These include:
+	-> Fruits (regular, mega) - Updates score. They can get "consumed". Toggles to "hyper-mode" if collision was with mega-fruit
+	-> Ghosts - Toggles to "lose-mode"
+5. After evaluating all of this, new mode is set or kept. Modes include:
+	-> Regular - Regular mode
+	-> Hyper - Pac-man can eat ghosts and they all try to go to their own home
+	-> Lose - Pac-Man dies. Game ends
+	-> Win - Pac-Man wins. When there are no fruits to be consumed. Game ends
+6. Loop continues or ends, based on current mode
+
+---------------------------------------------------------------------------------------------------------------------------------------------
