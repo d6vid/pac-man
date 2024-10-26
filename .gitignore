@@ -1,0 +1,95 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+.venv/
+.Python
+
+# Pip environment and cache files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python egg files
+*.egg
+*.egg-info/
+.eggs/
+
+# Build artifacts
+build/
+dist/
+*.manifest
+*.spec
+
+# Installer logs
+install.sh.log
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.coverage.*
+*.gcda
+*.gcno
+*.pyo
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pyenv settings
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+.dmypy/
+
+# Django files
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask files
+instance/
+.webassets-cache
+
+# PyCharm / JetBrains IDE files
+.idea/
+*.iml
+
+# VS Code settings and workspace files
+.vscode/
+.vscode/settings.json
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# VS Code extension cache
+.vscode-test/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Pygame cache
+__pycache__/
+assets/__pycache__/
